@@ -1,2 +1,3 @@
 node_modules
 dist
+- uses: shinyinc/action-aws-cli@v1.2
