@@ -1,5 +1,15 @@
 # Readme for Micro-frontends
 
+## TODO's after course
+
+- Go back and re-watch part about the 'onParentNavigate'. How exactly is routing working between parent and child apps?
+- Stephen helped us set up how to use navigation within each micro frontend, but it is unclear if nested
+  routes will also be included in this. E.g. /pricing works, but what if there was an individual price route
+  we want to go to such as /pricing/1?
+- Instead of the `lazy` method, can we convert this to use the loadRemote that Daniel added in his PR?
+- Make this all work with a Vue app as the container instead of React. How do we handle lazy loading?
+- Research how to incorporate a global state store into all of this.
+
 ## Cheatsheets
 
 ### S3 Bucket Creation and Configuration

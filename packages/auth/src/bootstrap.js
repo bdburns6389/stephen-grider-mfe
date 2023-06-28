@@ -4,7 +4,7 @@ import { createMemoryHistory, createBrowserHistory } from "history";
 import App from "./App";
 
 // Create the mounting point for all the code.
-const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
+const mount = (el, { onSignIn, onNavigate, defaultHistory, initialPath }) => {
   // Use browser history when running in isolation.
   const history =
     defaultHistory ||
@@ -16,9 +16,10 @@ const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
     history.listen(onNavigate);
   }
 
-  ReactDOM.render(<App history={history} />, el);
+  ReactDOM.render(<App onSignIn={onSignIn} history={history} />, el);
 
   return {
+    // Allows container to communicate to us that it made a routing change
     onParentNavigate({ pathname: nextPathname }) {
       const { pathname } = history.location;
 
@@ -31,7 +32,7 @@ const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
 
 // If we are in dev mode and in isolation, call mount immediately.
 if (process.env.NODE_ENV === "development") {
-  const devRoot = document.querySelector("#_marketing-dev-root");
+  const devRoot = document.querySelector("#_auth-dev-root");
 
   if (devRoot) {
     mount(devRoot, { defaultHistory: createBrowserHistory() });
