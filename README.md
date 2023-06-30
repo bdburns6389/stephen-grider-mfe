@@ -9,6 +9,7 @@
 - Instead of the `lazy` method, can we convert this to use the loadRemote that Daniel added in his PR?
 - Make this all work with a Vue app as the container instead of React. How do we handle lazy loading?
 - Research how to incorporate a global state store into all of this.
+- Implement routing in the Vue app.
 
 ## Cheatsheets
 
